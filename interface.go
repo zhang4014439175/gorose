@@ -18,4 +18,5 @@ type IOrm[T any] interface {
 
 type IConvert[T IOrm] interface {
 	ToJSON() string
+	ToArry() []string
 }

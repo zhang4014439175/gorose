@@ -2,10 +2,6 @@ package gorose
 
 // IOrm ...
 type IOrm interface {
-	IOrmApi
-	IOrmQuery
-	IOrmExecute
-	IOrmSession
 	//ISession
 	Close()
 	BuildSql(operType ...string) (string, []interface{}, error)
