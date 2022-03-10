@@ -6,6 +6,8 @@ type IQuery[T constraints.Ordered] interface {
 	Query(sqlString string, args ...T)
 }
 
+
+
 type IExecute[T constraints.Ordered] interface {
 	Execute(sqlString string, args ...T)
 }

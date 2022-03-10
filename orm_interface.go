@@ -54,10 +54,6 @@ type IOrm interface {
 	ClearBindValues()
 	Transaction(closers ...func(db IOrm) error) (err error)
 	Reset() IOrm
-	ResetTable() IOrm
-	ResetWhere() IOrm
-	GetISession() ISession
-	GetOrmApi() *OrmApi
 	// 悲观锁使用
 	// sharedLock(lock in share mode) 不会阻塞其它事务读取被锁定行记录的值
 	SharedLock() *Orm

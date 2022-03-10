@@ -377,10 +377,12 @@ func (dba *Orm) Transaction(closers ...func(db IOrm) error) (err error) {
 	}
 
 	for _, closer := range closers {
+
 		err = closer(dba)
 		if err != nil {
 			dba.GetIEngin().GetLogger().Error(err.Error())
 			_ = dba.ISession.Rollback()
+
 			return
 		}
 	}
